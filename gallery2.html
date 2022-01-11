@@ -127,24 +127,99 @@
         <font color="#2a2a2a" size="9" >    
             
     </font>  
-    <img  src = "images/WarChild1.png" alt ="Artwork image"
-    width="400" 
-    height="600" />
+    <script> let darkBoxVisible = false;
+    
+
+        function showDarkbox(url) {
+            if(!darkBoxVisible) {
+             let x = (window.innerWidth - 1280) / 2;
+             let y = window.scrollY + 50;
+             // Create the darkBox
+             var div = document.createElement("div");
+             div.id = "darkbox";
+             div.innerHTML = '<img class="darkboximg" src="'+url+'" />';
+             document.body.appendChild(div);
+             let box = document.getElementById("darkbox");
+             box.style.left = x.toString()+"px";
+             box.style.top = y.toString()+"px";
+             box.style.height = 'auto';
+             box.addEventListener('click', (event) => {
+              // Remove it
+              let element = document.getElementById("darkbox");
+              element.parentNode.removeChild(element);
+              darkBoxVisible = false;
+             })
+             darkBoxVisible = true;
+           } else {
+             // Remove it
+             let element = document.getElementById("darkbox");
+             element.parentNode.removeChild(element);
+             darkBoxVisible = false;
+          }
+         }
+         window.addEventListener('load', (event) => {
+           let images = document.querySelectorAll("img");
+           if(images !== null && images !== undefined && images.length > 0) {
+            images.forEach(function(img) {
+             img.addEventListener('click', (evt) => {
+              showDarkbox(img.src);
+             });
+            });
+           }
+          });
+        
+        </script>
+    <div id="gallery">
+  
+        <img src="images/OxjamWaterMural.png">
+
+        <img src="images/StreetArtWaterloo.jpeg">
+
+        <img src="images/Buddha.jpeg">
+
+        <img src="images/AWArrior.jpeg">
+
+        <!-- <img src="images/JungleTVAP5.jpg"> -->
+        <img src="images/JungleTVAP1.jpg">
+        <img src="images/jungletvAP3.jpg">
+        <img src="images/Jungle_APTV2021.jpg">
+        
+        <br>
+
+        <img src="images/BlueIguana1.png">
+        <img src="images/BlueIguana2.png">
+        <img src="images/BlueIguana3.png">
+        
+        <img src="images/NCGraffitiPiece.png">
+
+        <img src="images/GraffitiArtShoreditch2.jpeg">
+        <img src="images/GraffitiArtShoreditch.jpeg">
+
+        <img src="images/CheekyBear.jpeg">
+        <img src="images/1eyedWilly.png">
+
+        <!-- <img src="images/Sailor1.png">
+        <img src="images/Hole1.png">
+        <img src="images/WomanwithChild2.png">
+        <img src="images/">
+         -->
+      
+       
+       </div>
      </h1>   
     </div> 
-    <br>
+    <br><br />
     <h3 align="center">    
-        <font face="Lato" color="141414" size="3">    
-            PatrickByrneArt@gmail.com | Tel. 07********* | Instagram.com/NAYSE_BTC
-    
+        <font face="Lato" color="646464" size="2">    
+            (Click to Zoom)
         </font>    
     <br /><br /><br /><br /><br /><br/>   
     <hr width="1500px">    
     <center>    
 <div>    
     <b>    
-    <font face="cinzel" size="4">    
-        <a href ="about.html">About |     
+    <font face="Roboto" size="4">    
+        
         <a href ="contact.html">Contact     
        
     </a><br/><br/>    
